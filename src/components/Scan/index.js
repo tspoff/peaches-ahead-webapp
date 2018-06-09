@@ -14,22 +14,37 @@ class App extends Component {
     console.log(this.props);
   }
   QRToHash(data) {
-    // let res = data.split(" ");
-    // return res[1];
-  }
+    let res = data.split(" ");
+    return res[1];
+    }
   handleScan(data) {
     if (data) {
-      // const hash = this.QRToHash();
+      const hash = this.QRToHash(data);
+      console.log(hash);
       this.setState({
-        result: data,
+        result: hash,
       })
-      // this.props.history.push(`/data/${this.state.data}`);
     }
-    
   }
   handleError(err) {
     console.error(err)
   }
+
+  getMultiChainData(hash) {
+    const cli = new FactomCli({
+      host: '52.202.51.228',
+      port: 8088,
+      retry: {
+        retries: 4,
+        factor: 2,
+        minTimeout: 500,
+        maxTimeout: 2000
+      }
+    });
+
+
+  }
+
   render() {
     const { className, ...props } = this.props;
     return (
