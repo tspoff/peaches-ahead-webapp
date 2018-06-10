@@ -37,7 +37,7 @@ class QRScanner extends Component {
 
   render() {
     const { delay, isQrCodeProcessing } = this.props;
-    const { qrCode, productDetails, hash } = this.props.productMetadata;
+    const { qrCode, productOrigin, productNumber, hash } = this.props.productMetadata;
 
     return (
         <div>
@@ -59,8 +59,8 @@ class QRScanner extends Component {
                 <div>Hash: {hash}</div>
                 <div>Product Details</div>
                 <ul>
-                  <li>Origin: {productDetails && productDetails.productOrigin ? orchardIndexToName(productDetails.productOrigin)  : 'None'}</li>
-                  <li>Number: {productDetails && productDetails.productNumber ? productDetails.productNumber  : 'None'}</li>
+                  <li>Origin: {orchardIndexToName(productOrigin) || 'None'}</li>
+                  <li>Number: {productNumber || 'None'}</li>
                 </ul>
               </div>
             )

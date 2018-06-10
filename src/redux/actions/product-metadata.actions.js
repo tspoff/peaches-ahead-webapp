@@ -21,10 +21,8 @@ function updateMetadata (qrCode) {
       const metadata = {
         qrCode,
         hash,
-        productDetails: {
-          productOrigin,
-          productNumber
-        }
+        productOrigin,
+        productNumber
       };
       return {type: productMetadataConstants.UPDATE_METADATA, payload: metadata};
     }

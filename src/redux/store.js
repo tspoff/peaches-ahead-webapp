@@ -24,11 +24,11 @@ const initialState = {
   productMetadata: {
     qrCode: null,
     hash: null,
-    productDetails: {
-      productOrigin: null,
-      productNumber: null
-    }
-  }
+    productOrigin: null,
+    productNumber: null
+  },
+  productDetails: {},
+  productChain: []
 };
 
 const store = createStore(rootReducer, initialState, composeWithDevTools(
