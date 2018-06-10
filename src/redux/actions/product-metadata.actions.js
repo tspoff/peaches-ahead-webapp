@@ -17,13 +17,13 @@ function updateMetadata (qrCode) {
 
     function update (qrCode) {
       const [productIdentifier, hash] = split(qrCode, ' ');
-      const [productType, productOrigin] = split(productIdentifier, '-');
+      const [productOrigin, productNumber] = split(productIdentifier, '-');
       const metadata = {
         qrCode,
         hash,
         productDetails: {
-          productType,
-          productOrigin
+          productOrigin,
+          productNumber
         }
       };
       return {type: productMetadataConstants.UPDATE_METADATA, payload: metadata};

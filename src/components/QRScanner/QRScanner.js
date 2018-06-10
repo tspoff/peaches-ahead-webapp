@@ -6,6 +6,8 @@ import QrReader from 'react-qr-reader';
 import { productMetadataActions } from '../../redux/actions';
 import './QRScanner.css';
 
+import orchardIndexToName from '../../mappings/orchardNames';
+
 class QRScanner extends Component {
   static propTypes = {
     delay: PropTypes.number,
@@ -57,8 +59,8 @@ class QRScanner extends Component {
                 <div>Hash: {hash}</div>
                 <div>Product Details</div>
                 <ul>
-                  <li>Type: {productDetails && productDetails.productType ? productDetails.productType  : 'None'}</li>
-                  <li>Origin: {productDetails && productDetails.productOrigin ? productDetails.productOrigin  : 'None'}</li>
+                  <li>Origin: {productDetails && productDetails.productOrigin ? orchardIndexToName(productDetails.productOrigin)  : 'None'}</li>
+                  <li>Number: {productDetails && productDetails.productNumber ? productDetails.productNumber  : 'None'}</li>
                 </ul>
               </div>
             )
