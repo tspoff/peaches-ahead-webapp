@@ -5,7 +5,12 @@ function updateMetadata (state, action) {
     return { ...state, ...action.payload };
   }
 
-const productMetadata = UtilsService.createReducer({}, {
+const productMetadata = UtilsService.createReducer({
+  qrCode: null,
+  hash: null,
+  productOrigin: null,
+  productNumber: null
+}, {
   [productMetadataConstants.UPDATE_METADATA]: updateMetadata
 });
 

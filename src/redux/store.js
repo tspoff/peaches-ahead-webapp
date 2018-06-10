@@ -10,28 +10,7 @@ if ( process.env.NODE_ENV === 'development' ) {
   middleware.push( createLogger() )
 }
 
-const initialState = {
-  user: {
-    id: null,
-    firstName: '',
-    lastName: ''
-  },
-  app: {
-    isAppLoaded: false,
-    isProcessing: false,
-    isQrCodeProcessing: false
-  },
-  productMetadata: {
-    qrCode: null,
-    hash: null,
-    productOrigin: null,
-    productNumber: null
-  },
-  productDetails: {},
-  productChain: []
-};
-
-const store = createStore(rootReducer, initialState, composeWithDevTools(
+const store = createStore(rootReducer, {}, composeWithDevTools(
   applyMiddleware( ...middleware )
 ));
 

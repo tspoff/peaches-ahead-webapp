@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import QrReader from 'react-qr-reader';
 import { productMetadataActions } from '../../redux/actions';
+import { ORCHARDS } from '../../constants';
 import './QRScanner.css';
-
-import orchardIndexToName from '../../mappings/orchardNames';
 
 class QRScanner extends Component {
   static propTypes = {
@@ -59,7 +58,7 @@ class QRScanner extends Component {
                 <div>Hash: {hash}</div>
                 <div>Product Details</div>
                 <ul>
-                  <li>Origin: {orchardIndexToName(productOrigin) || 'None'}</li>
+                  <li>Origin: {ORCHARDS[productOrigin] || 'None'}</li>
                   <li>Number: {productNumber || 'None'}</li>
                 </ul>
               </div>
