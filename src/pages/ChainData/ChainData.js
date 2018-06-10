@@ -1,17 +1,13 @@
 // src/components/App/index.js
 import React, { Component } from 'react';
-import classnames from 'classnames';
 
 import logo from './logo.svg';
-import './style.css';
+import './ChainData.css';
 
-class App extends Component {
-  static propTypes = {}
-  static defaultProps = {}
-  state = {}
-  
+class ChainData extends Component {
+
   componentDidMount() {
-    const { multiChainHash } = this.props.params;
+    const { multiChainHash } = this.props.match.params;
     this.getChainData(multiChainHash);
   }
 
@@ -20,9 +16,8 @@ class App extends Component {
   }
 
   render() {
-    const { className, ...props } = this.props;
     return (
-      <div className={classnames('App', className)} {...props}>
+      <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
@@ -35,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export { ChainData };

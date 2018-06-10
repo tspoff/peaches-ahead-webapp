@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { browserHistory } from 'react-router';
 
 import './index.css';
 import store from './redux/store';
@@ -11,7 +12,7 @@ import Routes from './pages/Routes';
 injectTapEventPlugin();
 
 ReactDOM.render(
-  <Routes store={store} />,
+  <Routes store={store} history={browserHistory} />,
   document.getElementById('root')
 );
 
