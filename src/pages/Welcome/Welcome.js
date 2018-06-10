@@ -14,12 +14,14 @@ class Welcome extends Component {
   render() {
     return (
       <div className="peach-container peach-col peach-welcome">
-        <div className="peach-container peach-col peach-welcome-titles">
-          <h1 className="peach-welcome-title">Welcome to miroBC</h1>
-          <h2>Let's scan a code</h2>
-        </div>
-        <div className="peach-container peach-col peach-welcome-info">
-          <RaisedButton label="Scan" backgroundColor="#FFAD63" labelColor="#FFF" className="peach-info-scan-button" fullWidth={true} onClick={this.onClick} />
+        <div className="peach-bc-transition-down">
+          <div className="peach-container peach-col peach-welcome-titles">
+            <h1 className="peach-welcome-title">Welcome to miroBC</h1>
+            <h2>Let's scan a code</h2>
+          </div>
+          <div className="peach-container peach-col peach-welcome-info">
+            <RaisedButton label="Scan" backgroundColor="#FFAD63" labelColor="#FFF" className="peach-info-scan-button" fullWidth={true} onClick={this.onClick} />
+          </div>
         </div>
 
       </div>

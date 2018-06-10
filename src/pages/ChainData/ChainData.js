@@ -40,7 +40,7 @@ class ChainData extends Component {
       <div className="peach-blockchain-container peach-container peach-full-height peach-h-center">{
         isMultichainLoading ? <Loading /> :
         (
-          <div>
+          <div className="peach-bc-card-container">
             <div className="peach-chain-overlay"></div>
             <Card className="peach-full-width peach-bc-card">
               <div className="peach-bc-title-section">

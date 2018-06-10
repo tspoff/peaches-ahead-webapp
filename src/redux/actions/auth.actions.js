@@ -12,7 +12,7 @@ function authenticateUser () {
     setTimeout(() => {
       dispatch(setUser({id: '123', firstName: 'Test', lastName: 'Account'}));
       dispatch(appActions.setAppLoaded(true));
-    }, 2000);
+    }, 3000);
 
     // fetch(`/api/user/123`)
     //   .then(

@@ -9,11 +9,8 @@ export const productMetadataActions = {
 function updateMetadata (qrCode) {
   return dispatch => {
     dispatch(setQrCodeProcessing(true));
-
-    setTimeout(() => {
-      dispatch(update(qrCode));
-      dispatch(setQrCodeProcessing(false));
-    }, 2000);
+    dispatch(update(qrCode));
+    dispatch(setQrCodeProcessing(false));
 
     function update (qrCode) {
       const [productIdentifier, hash] = split(qrCode, ' ');

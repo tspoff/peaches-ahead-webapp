@@ -146,7 +146,7 @@
     }
 
     .peach-info-done {
-        padding-top: 100px;
+        padding-top: 80px;
         max-width: 200px;
         margin: 0 auto;
     }
@@ -160,4 +160,13 @@
             line-height: 50px !important;
         }
     }
+}
+
+.peach-bc-card-container {
+    left: 0;
+    position: relative;
+    animation: slideIn 0.4s;
+  -moz-animation: slideIn 0.4s; /* Firefox */
+  -webkit-animation: slideIn 0.4s; /* Safari and Chrome */
+  -o-animation: slideIn 0.4s; /* Opera */
 }

@@ -1,45 +1,16 @@
+.peach-bc-transition-down {
+    top: 0px;
+    position: relative;
+    animation: slideIn 0.5s;
+  -moz-animation: slideIn 0.5s; /* Firefox */
+  -webkit-animation: slideIn 0.5s; /* Safari and Chrome */
+  -o-animation: slideIn 0.5s; /* Opera */
+}
 .peach-welcome {
     margin-left: -26px;
     margin-right: -26px;
     height: 100%;
     justify-content: center;
-    animation: fadein 1s;
-  -moz-animation: fadein 1s; /* Firefox */
-  -webkit-animation: fadein 1s; /* Safari and Chrome */
-  -o-animation: fadein 1s; /* Opera */
-}
-
-@keyframes fadein {
-  from {
-      opacity:0;
-  }
-  to {
-      opacity:1;
-  }
-}
-@-moz-keyframes fadein { /* Firefox */
-  from {
-      opacity:0;
-  }
-  to {
-      opacity:1;
-  }
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-  from {
-      opacity:0;
-  }
-  to {
-      opacity:1;
-  }
-}
-@-o-keyframes fadein { /* Opera */
-  from {
-      opacity:0;
-  }
-  to {
-      opacity: 1;
-  }
 }
 
 .peach-welcome-titles {
