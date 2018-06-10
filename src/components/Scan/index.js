@@ -30,21 +30,6 @@ class App extends Component {
     console.error(err)
   }
 
-  getMultiChainData(hash) {
-    const cli = new FactomCli({
-      host: '52.202.51.228',
-      port: 8088,
-      retry: {
-        retries: 4,
-        factor: 2,
-        minTimeout: 500,
-        maxTimeout: 2000
-      }
-    });
-
-
-  }
-
   render() {
     const { className, ...props } = this.props;
     return (
