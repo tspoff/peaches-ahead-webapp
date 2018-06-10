@@ -164,12 +164,19 @@ html, body, #root {
       .peach-bc-card .peach-bc-meta-section .peach-bc-meta-hash .peach-bc-hash-title {
         font-size: 14px;
         float: left;
-        color: #888; }
+        color: #888;
+        display: block;
+        width: 100%;
+        text-align: left; }
       .peach-bc-card .peach-bc-meta-section .peach-bc-meta-hash .peach-bc-hash {
         font-size: 14px;
         display: block;
         text-align: left;
-        color: #999; }
+        color: #999;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%; }
   .peach-bc-card .peach-info-done {
     padding-top: 100px;
     max-width: 200px;

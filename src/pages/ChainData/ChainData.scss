@@ -127,6 +127,9 @@
                 font-size: 14px;
                 float: left;
                 color: #888;
+                display: block;
+                width: 100%;
+                text-align: left;
             }
 
             .peach-bc-hash {
@@ -134,6 +137,10 @@
                 display: block;
                 text-align: left;
                 color: #999;
+                display: block;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 100%;
             }
         }
     }

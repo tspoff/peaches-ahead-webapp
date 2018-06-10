@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { productBlockchainActions } from '../../redux/actions';
+import { ORCHARDS } from '../../constants';
 
 import {Card} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -16,6 +17,7 @@ import './ChainData.css';
 class ChainData extends Component {
   static propTypes = {
     productBlockchain: PropTypes.object,
+    productMetadata: PropTypes.object,
     getMultichain: PropTypes.func
   };
 
@@ -30,6 +32,8 @@ class ChainData extends Component {
 
   render() {
     const { isMultichainLoading } = this.props.productBlockchain;
+    const { productOrigin, hash } = this.props.productMetadata;
+    const { multiChainHash } = this.props.match.params;
     return (
       <div className="peach-blockchain-container peach-container peach-full-height peach-h-center">{
         isMultichainLoading ? <Loading /> :
@@ -61,13 +65,13 @@ class ChainData extends Component {
                 <div className="peach-bc-meta-origin">
                   <span className="peach-bc-origin-left">Origin</span>
                   <span className="peach-bc-origin-right">
-                    <span>Tarim Produce</span>
+                    <span>{ORCHARDS[productOrigin] || 'Tarim Produce'}</span>
                     <span>Austin, TX</span>
                   </span>
                 </div>
                 <div className="peach-bc-meta-hash">
                   <span className="peach-bc-hash-title">Hash</span>
-                  <span className="peach-bc-hash">7832ab6b126a8581b831f728b9f7cc427</span>
+                  <span className="peach-bc-hash">{hash || multiChainHash || '7832ab6b126a8581b831f728b9f7cc427'}</span>
                 </div>
               </div>
               <div className="peach-info-done">
@@ -86,9 +90,10 @@ const mapDispatchToProps = dispatch => bindActionCreators( {
 }, dispatch );
 
 function mapStateToProps(state) {
-  const { productBlockchain } = state;
+  const { productBlockchain, productMetadata } = state;
   return {
-    productBlockchain
+    productBlockchain,
+    productMetadata
   };
 }
 
