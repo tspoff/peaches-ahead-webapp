@@ -10,8 +10,6 @@ const PEACH_CHAIN_HASH = '04fc7129d25d2d3068eea5c8a51413d2b42ebbb789229653401091
 
 const app = express();
 
-const cli = new FactomCli();
-
 const multichain = require("multichain-node")({
   port: 7189,
   host: '172.17.0.2',
@@ -43,7 +41,8 @@ app.get('/api/factom/entry/:entry', async (req, res) => {
   }  
 });
 
-app.get('/api/multichain', async (req, res) => {
+app.get('/api/multichain/tx/:txId', async (req, res) => {
+  const txId = req.params.txId;
   multichain.getInfo((err, info) => {
     if (err) {
       throw err;
