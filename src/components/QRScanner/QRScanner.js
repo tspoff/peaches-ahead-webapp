@@ -19,15 +19,13 @@ class QRScanner extends Component {
     console.log(this.props.productMetadata);
   }
 
-  displayQRCode = () => {
-    const { qrCode } = this.props.productMetadata;
-    return qrCode || 'No Result.';
-  }
-
   handleScan = (qrCode) => {
     const { originalQRCode } = this.props.productMetadata;
     if (qrCode && qrCode !== originalQRCode) {
-      this.props.updateMetadata(qrCode);
+      const isQRCode = RegExp('^[0-9a-fA-F]{4}-[0-9a-fA-F]{4} [0-9a-fA-F]{64}$').test(qrCode);
+      if (isQRCode) {
+        this.props.updateMetadata(qrCode);
+      }
     }
   }
 
@@ -37,7 +35,7 @@ class QRScanner extends Component {
 
   render() {
     const { delay, isQrCodeProcessing } = this.props;
-    const { qrCode } = this.props.productMetadata
+    const { qrCode, productDetails, hash } = this.props.productMetadata;
 
     return (
         <div>
@@ -52,7 +50,19 @@ class QRScanner extends Component {
               />)
             )
           }
-          <p>{this.displayQRCode()}</p>
+          <div>{
+            !qrCode ? 'No Result.' :
+            (
+              <div>
+                <div>Hash: {hash}</div>
+                <div>Product Details</div>
+                <ul>
+                  <li>Type: {productDetails && productDetails.productType ? productDetails.productType  : 'None'}</li>
+                  <li>Origin: {productDetails && productDetails.productOrigin ? productDetails.productOrigin  : 'None'}</li>
+                </ul>
+              </div>
+            )
+          }</div>
         </div>
     );
   }
