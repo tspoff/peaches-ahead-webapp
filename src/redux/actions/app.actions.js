@@ -1,19 +1,14 @@
-import { appConstants } from '../constants';
+import { AppConstants } from '../constants';
 
 export const appActions = {
   setAppLoaded,
-  setIsProcessing,
-  setQrCodeProcessing
+  setIsProcessing
 };
 
 function setAppLoaded (isAppLoaded) {
-  return {type: appConstants.SET_APP_LOADED, payload: { isAppLoaded }};
+  return {type: AppConstants.SET_APP_LOADED, payload: { isAppLoaded }};
 }
 
 function setIsProcessing (isProcessing) {
-  return {type: appConstants.SET_IS_PROCESS, payload: { isProcessing }};
-}
-
-function setQrCodeProcessing (isQrCodeProcessing) {
-  return {type: appConstants.SET_QRCODE_PROCESSING, payload: { isQrCodeProcessing }};
+  return {type: AppConstants.SET_IS_PROCESS, payload: { isProcessing }};
 }

@@ -1,18 +1,25 @@
 import UtilsService from '../services/utils.service';
-import { productMetadataConstants } from '../constants';
+import { ProductMetadataConstants } from '../constants';
 
 function updateMetadata (state, action) {
-    return { ...state, ...action.payload };
-  }
+  return { ...state, ...action.payload };
+}
+
+function setQRCodeProcessing (state, action) {
+  const { isQrCodeProcessing } = action.payload;
+  return { ...state, isQrCodeProcessing };
+}
 
 const productMetadata = UtilsService.createReducer({
   qrCode: null,
   hash: null,
   productOrigin: null,
-  productNumber: null
+  productNumber: null,
+  isQrCodeProcessing: false
 }, {
-  [productMetadataConstants.UPDATE_METADATA]: updateMetadata,
-  [productMetadataConstants.CLEAR_METADATA]: updateMetadata
+  [ProductMetadataConstants.UPDATE_METADATA]: updateMetadata,
+  [ProductMetadataConstants.CLEAR_METADATA]: updateMetadata,
+  [ProductMetadataConstants.SET_QRCODE_PROCESSING]: setQRCodeProcessing
 });
 
 export default productMetadata;

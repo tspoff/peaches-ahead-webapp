@@ -1,5 +1,5 @@
 import UtilsService from '../services/utils.service';
-import { authConstants, userConstants } from '../constants';
+import { AuthConstants, UserConstants } from '../constants';
 
 function notifyApiRequest (state, action) {
   return state;
@@ -14,11 +14,11 @@ const user = UtilsService.createReducer({
   firstName: '',
   lastName: ''
 }, {
-  [authConstants.AUTHENTICATE_USER_REQUEST]: notifyApiRequest,
-  [authConstants.AUTHENTICATE_USER_RESPONSE_SUCCESS]: updateUser,
+  [AuthConstants.AUTHENTICATE_USER_REQUEST]: notifyApiRequest,
+  [AuthConstants.AUTHENTICATE_USER_RESPONSE_SUCCESS]: updateUser,
 
-  [userConstants.GET_USER_REQUEST]: notifyApiRequest,
-  [userConstants.GET_USER_RESPONSE_SUCCESS]: updateUser
+  [UserConstants.GET_USER_REQUEST]: notifyApiRequest,
+  [UserConstants.GET_USER_RESPONSE_SUCCESS]: updateUser
 });
 
 export default user;

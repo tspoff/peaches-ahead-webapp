@@ -1,24 +1,136 @@
-.App {
-  text-align: center;
+@import '../../theme.scss';
+
+.peach-blockchain-container {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-left: -26px;
+    margin-right: -26px;
+    padding-left: 26px;
+    padding-right: 26px;
+    background-color: #bbb;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+.peach-bc-card {
+    border-radius: 10px !important;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-width: 500px;
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+    p {
+        margin: 0;
+        line-height: 23px;
+    }
 
-.App-intro {
-  font-size: large;
-}
+    .peach-bc-title-section {
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+        .peach-bc-title {
+            font-size: 24px;
+        }
+
+        .peach-bc-subtitle {
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .peach-bc-city-state {
+            font-size: 18px;
+            color: #666;
+        }
+    }
+
+    .peach-bc-data-section {
+        padding-bottom: 0px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+
+        .peach-bc-lineitems-title {
+            text-align: left;
+            max-width: 350px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .peach-bc-lineitem {
+            max-width: 300px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+
+            .peach-bc-lineitem-left {
+                font-size: 14px;
+                float: left;
+                color: #888;
+            }
+
+            .peach-bc-lineitem-right {
+                font-size: 14px;
+                display: block;
+                text-align: right;
+            }
+        }
+    }
+
+    .peach-bc-meta-section {
+        padding-bottom: 0px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #ddd;
+
+        .peach-bc-meta-origin {
+            max-width: 300px;
+            margin: 0 auto;
+
+            .peach-bc-origin-left {
+                font-size: 14px;
+                float: left;
+                color: #888;
+            }
+
+            .peach-bc-origin-right {
+                display: block;
+                span {
+                    font-size: 14px;
+                    display: block;
+                    text-align: right;
+                }
+            }
+        }
+
+        .peach-bc-meta-hash {
+            max-width: 300px;
+            margin: 0 auto;
+            padding-bottom: 10px;
+
+            .peach-bc-hash-title {
+                font-size: 14px;
+                float: left;
+                color: #888;
+            }
+
+            .peach-bc-hash {
+                font-size: 14px;
+                display: block;
+                text-align: left;
+                color: #999;
+            }
+        }
+    }
+
+    .peach-info-done {
+        padding-top: 50px;
+    }
+
+    .peach-info-done-button button {
+        padding: 10px 50px !important;
+        height: auto !important;
+    }
 }

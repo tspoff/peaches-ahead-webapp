@@ -1,6 +1,5 @@
 import { split } from 'lodash';
-import { productMetadataConstants } from '../constants';
-import { appActions } from './app.actions';
+import { ProductMetadataConstants } from '../constants';
 
 export const productMetadataActions = {
   updateMetadata,
@@ -9,11 +8,11 @@ export const productMetadataActions = {
 
 function updateMetadata (qrCode) {
   return dispatch => {
-    dispatch(appActions.setQrCodeProcessing(true));
+    dispatch(setQrCodeProcessing(true));
 
     setTimeout(() => {
       dispatch(update(qrCode));
-      dispatch(appActions.setQrCodeProcessing(false));
+      dispatch(setQrCodeProcessing(false));
     }, 2000);
 
     function update (qrCode) {
@@ -25,13 +24,17 @@ function updateMetadata (qrCode) {
         productOrigin,
         productNumber
       };
-      return {type: productMetadataConstants.UPDATE_METADATA, payload: metadata};
+      return {type: ProductMetadataConstants.UPDATE_METADATA, payload: metadata};
     }
+  }
+
+  function setQrCodeProcessing(isQrCodeProcessing) {
+    return {type: ProductMetadataConstants.SET_QRCODE_PROCESSING, payload: { isQrCodeProcessing }};
   }
 }
 
 function clearMetadata () {
-  return {type: productMetadataConstants.CLEAR_METADATA, payload: {
+  return {type: ProductMetadataConstants.CLEAR_METADATA, payload: {
     qrCode: null,
     hash: null,
     productOrigin: null,

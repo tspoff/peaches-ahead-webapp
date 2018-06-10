@@ -2,6 +2,7 @@
   "name": "routed-react",
   "version": "0.0.1",
   "private": true,
+  "proxy": "http://localhost:9000",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.0.2",

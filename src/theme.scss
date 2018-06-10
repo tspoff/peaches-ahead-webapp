@@ -68,12 +68,12 @@ html, body, #root {
   align-items: center;
 }
 
-.peach-container.peach-stretch {
-  align-items: stretch;
+.peach-container.peach-h-center {
+  justify-content: center;
 }
 
-.peach-animated-ellipsis {
-  font-size: 30px;
+.peach-container.peach-stretch {
+  align-items: stretch;
 }
 
 .peach-animated-ellipsis:after {

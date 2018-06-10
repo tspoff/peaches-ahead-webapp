@@ -4,16 +4,35 @@
   margin-left: -26px;
   margin-right: -26px;
   height: 100%;
-  width: 100%;
   section {
     height: 100%;
     width: 100%;
     padding-top: 0 !important;
+    div {
+      box-shadow: $primary 0px 0px 0px 2px inset !important;
+    }
   }
 }
 
+.peach-qr-instructions {
+  position: absolute;
+  top: 15px;
+  width: 100%;
+  text-align: center;
+  color: $white;
+  z-index: 2;
+  font-size: $text-md;
+}
+
 .peach-processing {
-  justify-content: center;
-  margin: 0 auto;
   font-size: $text-lg;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: flex-end;
+  z-index: 2;
+  bottom: 10px;
+  span {
+    color: $white;
+  }
 }

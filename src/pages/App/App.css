@@ -46,11 +46,11 @@ html, body, #root {
 .peach-container.peach-v-center {
   align-items: center; }
 
+.peach-container.peach-h-center {
+  justify-content: center; }
+
 .peach-container.peach-stretch {
   align-items: stretch; }
-
-.peach-animated-ellipsis {
-  font-size: 30px; }
 
 .peach-animated-ellipsis:after {
   overflow: hidden;

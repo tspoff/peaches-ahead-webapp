@@ -1,5 +1,4 @@
-import { userConstants } from '../constants';
-import UserService from '../services/user.service';
+import { UserConstants } from '../constants';
 import { appActions } from './app.actions';
 
 export const userActions = {
@@ -10,13 +9,15 @@ function getProfile (userId) {
   return dispatch => {
     dispatch(request());
 
-    UserService.getProfile(userId)
+    fetch(`/api/user/${userId}`)
       .then(user => {
           dispatch(setUser(user));
           dispatch(appActions.setAppLoaded(true));
+      }).catch(err => {
+        console.error(err);
       });
 
-    function request () { return { type: userConstants.GET_USER_REQUEST }; }
-    function setUser (user) { return { type: userConstants.GET_USER_RESPONSE_SUCCESS, payload: user }; }
+    function request () { return { type: UserConstants.GET_USER_REQUEST }; }
+    function setUser (user) { return { type: UserConstants.GET_USER_RESPONSE_SUCCESS, payload: user }; }
   }
 }

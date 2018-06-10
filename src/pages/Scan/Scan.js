@@ -11,7 +11,6 @@ import './Scan.css';
 class Scan extends Component {
   static propTypes = {
     productMetadata: PropTypes.object,
-    isQrCodeProcessing: PropTypes.bool,
     parseQRCodeToMetadata: PropTypes.func
   };
 
@@ -41,24 +40,24 @@ class Scan extends Component {
   }
 
   render() {
-    const { isQrCodeProcessing } = this.props;
+    const { isQrCodeProcessing } = this.props.productMetadata;
 
     return (
         <div className="peach-container peach-qrscanner">
+        <div className="peach-qr-instructions">Place the QR code inside the area</div>
           {
             isQrCodeProcessing ? (
               <div className="peach-container peach-col peach-v-center peach-processing">
-                <span className="peach-animated-ellipsis">Loading</span>
+                <span className="peach-animated-ellipsis">Processing</span>
               </div>
-            ) : (
-              <QrReader
-                delay={300}
-                resolution={800}
-                onError={this.handleError}
-                onScan={this.handleScan}
-              />
-            )
+            ) : null
           }
+          <QrReader
+            delay={300}
+            resolution={800}
+            onError={this.handleError}
+            onScan={this.handleScan}
+          />
         </div>
     );
   }
@@ -70,10 +69,9 @@ const mapDispatchToProps = dispatch => bindActionCreators( {
 }, dispatch );
 
 function mapStateToProps(state) {
-  const { productMetadata, app } = state;
+  const { productMetadata } = state;
   return {
-    productMetadata,
-    isQrCodeProcessing: app.isQrCodeProcessing
+    productMetadata
   };
 }
 
