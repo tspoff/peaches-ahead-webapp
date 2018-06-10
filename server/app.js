@@ -22,6 +22,12 @@ app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:htt
 // Serve static assets
 app.use(express.static(path.resolve(__dirname, '..', 'build')));
 
+/* result {}
+explorerUrl
+content in cleartext?
+the fact that it 
+
+*/ 
 app.get('/api/factom/entry/:entry', async (req, res) => {
   const entry = req.params.entry;
 
@@ -33,8 +39,15 @@ app.get('/api/factom/entry/:entry', async (req, res) => {
     };
     const response = await axios(options);
     console.log(response);
-    const result = await response.data;
-    res.send({ express: req.params.entry, result: result });
+
+    const explorerUrl = `https://explorer-sandbox-testnet.factom.com/chains/${config.factom.chainHash}/entries/${entry}`;
+
+    const result = {
+      explorerUrl: explorerUrl,
+      content: response.data.content,
+    };
+
+    res.send(result);
   } catch (err) {
     throw err;
   }  
