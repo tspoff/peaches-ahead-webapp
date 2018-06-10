@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
 
-import './style.css';
+import './About.css';
 
 class About extends Component {
   static propTypes = {}
