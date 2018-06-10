@@ -3,10 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "proxy": "http://localhost:9000",
+  "homepage": "http://tspoff.github.io/peaches-ahead-webapp",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
     "mz": "^2.4.0",
+    "gh-pages": "^1.2.0",
     "multichain-api": "^1.0.0-alpha.8",
     "multichain-node": "^2.1.6-version1.0.2",
     "react-scripts": "0.2.3",
@@ -42,6 +44,8 @@
     "redux-thunk": "^2.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
