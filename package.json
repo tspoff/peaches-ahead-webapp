@@ -10,11 +10,13 @@
     "supertest-as-promised": "^4.0.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "classnames": "^2.2.5",
     "express": "^4.14.0",
     "factom": "^0.2.2",
     "factomdjs": "^0.4.1",
     "morgan": "^1.7.0",
+    "multichain-node": "^2.2.0-version1.0.4",
     "react": "^15.2.1",
     "react-dom": "^15.2.1",
     "react-qr-code": "^0.1.2",
