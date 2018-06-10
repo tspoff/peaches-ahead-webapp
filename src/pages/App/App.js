@@ -6,7 +6,6 @@ import './App.css';
 
 import Loading from '../../components/Loading/Loading';
 import LoggedIn from '../LoggedIn/LoggedIn';
-import { QRScanner } from '../../components/QRScanner/QRScanner';
 
 class App extends Component {
   componentDidMount() {

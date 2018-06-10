@@ -1,5 +1,19 @@
-.peach-qrscanner-container {
-    margin-left: -26px;
-    margin-right: -26px;
+@import '../../theme.scss';
+
+.peach-qrscanner {
+  margin-left: -26px;
+  margin-right: -26px;
+  height: 100%;
+  width: 100%;
+  section {
     height: 100%;
+    width: 100%;
+    padding-top: 0 !important;
   }
+}
+
+.peach-processing {
+  justify-content: center;
+  margin: 0 auto;
+  font-size: $text-lg;
+}

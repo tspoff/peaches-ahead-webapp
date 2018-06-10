@@ -5,7 +5,7 @@ class Loading extends Component {
   render() {
     return (
       <div className="peach-app-loading-container">
-        <div>Loading...</div>
+        <div className="peach-app-logo"></div>
       </div>
     );
   }
