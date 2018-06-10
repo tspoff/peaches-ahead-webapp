@@ -1,32 +1,35 @@
-import { createStore, applyMiddleware }                   from 'redux'
-import { composeWithDevTools }                            from 'redux-devtools-extension'
-import thunk                                              from 'redux-thunk'
-import rootReducer                                        from './reducers'
+import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import { createLogger } from 'redux-logger'
+import thunk from 'redux-thunk'
+import rootReducer from './reducers'
 
-/*
-Model: {
-  user: {
-    id: String,
-    firstName: String,
-    lastName: String
-  },
-  app: {
-    isAppLoaded: Boolean
-    isProcessing: Boolean,
-    isQrCodeProcessing: Boolean
-  },
-  productMetadata: {
-    qrCode: String
-  }
-}
-*/
 const middleware = [ thunk ]
 
 if ( process.env.NODE_ENV === 'development' ) {
-  middleware.push( require( 'redux-logger' ).default )
+  middleware.push( createLogger() )
 }
 
-const initialState = window.__INITIAL_STATE__ || {}
+const initialState = {
+  user: {
+    id: null,
+    firstName: '',
+    lastName: ''
+  },
+  app: {
+    isAppLoaded: false,
+    isProcessing: false,
+    isQrCodeProcessing: false
+  },
+  productMetadata: {
+    qrCode: null,
+    hash: null,
+    productDetails: {
+      productOrigin: null,
+      productNumber: null
+    }
+  }
+};
 
 const store = createStore(rootReducer, initialState, composeWithDevTools(
   applyMiddleware( ...middleware )
