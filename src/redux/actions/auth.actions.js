@@ -15,7 +15,7 @@ function authenticateUser () {
         setTimeout(() => {
           dispatch(setUser(user));
           dispatch(appActions.setAppLoaded(true));
-        }, 1000);
+        }, 2000);
       }).catch((err) => {
         console.error(err);
       });

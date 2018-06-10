@@ -18,7 +18,7 @@
   font-family: europa, sans-serif;
   text-align: center;
   letter-spacing: 1px;
-  font-size: 10px;
+  font-size: 14px;
   color: #333; }
 
 body {
@@ -79,13 +79,25 @@ html, body, #root {
   padding-right: 26px;
   background-color: #bbb; }
 
+.peach-chain-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); }
+
 .peach-bc-card {
   border-radius: 10px !important;
   padding-top: 30px;
   padding-bottom: 20px;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
-  max-width: 500px; }
+  max-width: 500px;
+  z-index: 3;
+  position: relative; }
   .peach-bc-card p {
     margin: 0;
     line-height: 23px; }
@@ -159,7 +171,12 @@ html, body, #root {
         text-align: left;
         color: #999; }
   .peach-bc-card .peach-info-done {
-    padding-top: 50px; }
+    padding-top: 100px;
+    max-width: 200px;
+    margin: 0 auto; }
   .peach-bc-card .peach-info-done-button button {
-    padding: 10px 50px !important;
-    height: auto !important; }
+    height: 50px !important; }
+    .peach-bc-card .peach-info-done-button button div {
+      height: 50px !important; }
+    .peach-bc-card .peach-info-done-button button span {
+      line-height: 50px !important; }

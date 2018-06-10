@@ -25,12 +25,12 @@ class Scan extends Component {
     }
   }
 
-  handleScan = (qrCode) => {
-    const { originalQRCode } = this.props.productMetadata;
-    if (qrCode && qrCode !== originalQRCode) {
-      const isQRCode = RegExp('^[0-9a-fA-F]{4}-[0-9a-fA-F]{4} [0-9a-fA-F]{64}$').test(qrCode);
+  handleScan = (newQrCode) => {
+    const { qrCode, isQrCodeProcessing } = this.props.productMetadata;
+    if (newQrCode && qrCode !== newQrCode && !isQrCodeProcessing) {
+      const isQRCode = RegExp('^[0-9a-fA-F]{4}-[0-9a-fA-F]{4} [0-9a-fA-F]{64}$').test(newQrCode);
       if (isQRCode) {
-        this.props.updateMetadata(qrCode);
+        this.props.updateMetadata(newQrCode);
       }
     }
   }

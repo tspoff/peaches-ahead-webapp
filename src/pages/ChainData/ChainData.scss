@@ -10,13 +10,26 @@
     background-color: #bbb;
 }
 
+.peach-chain-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
 .peach-bc-card {
     border-radius: 10px !important;
     padding-top: 30px;
     padding-bottom: 20px;
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
     max-width: 500px;
+    z-index: 3;
+    position: relative;
 
     p {
         margin: 0;
@@ -126,11 +139,18 @@
     }
 
     .peach-info-done {
-        padding-top: 50px;
+        padding-top: 100px;
+        max-width: 200px;
+        margin: 0 auto;
     }
 
     .peach-info-done-button button {
-        padding: 10px 50px !important;
-        height: auto !important;
+        height: 50px !important;
+        div {
+            height: 50px !important;
+        }
+        span {
+            line-height: 50px !important;
+        }
     }
 }
