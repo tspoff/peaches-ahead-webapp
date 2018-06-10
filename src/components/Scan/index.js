@@ -14,6 +14,9 @@ class App extends Component {
     console.log(this.props);
   }
   QRToHash(data) {
+    //Split this into all data
+    //orchard, box, hash - statically reference the first two
+    //0000 - 0001 #hash
     let res = data.split(" ");
     return res[1];
     }
