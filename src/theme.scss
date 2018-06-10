@@ -1,0 +1,73 @@
+// Variables
+$primary: #347E1A;
+$secondary: #F54C27;
+$white: #FFF;
+$gray: #333;
+
+$text-lg: 20px;
+$text-md: 16px;
+$text-sm: 14px;
+$text-xs: 10px;
+
+@font-face {
+  font-family: 'europa';
+  src: url('https://use.typekit.net/af/8d7f8d/00000000000000003b9b08b9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/8d7f8d/00000000000000003b9b08b9/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/8d7f8d/00000000000000003b9b08b9/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('opentype');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'europa';
+  src: url('https://use.typekit.net/af/1d6def/00000000000000003b9b08ba/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/1d6def/00000000000000003b9b08ba/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/1d6def/00000000000000003b9b08ba/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('opentype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none !important;
+  font-family: europa, sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: $text-xs;
+  color: $gray;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.peach-full-height {
+  height: 100%;
+}
+
+.peach-full-width {
+  width: 100%;
+}
+
+.peach-container {
+  display: flex;
+}
+
+.peach-container.peach-col {
+  flex-direction: column;
+}
+
+.peach-container.peach-row {
+  flex-direction: row;
+}
+
+.peach-container.peach-v-center {
+  align-items: center;
+}
+
+.peach-container.peach-stretch {
+  align-items: stretch;
+}

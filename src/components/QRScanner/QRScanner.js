@@ -10,6 +10,7 @@ import './QRScanner.css';
 class QRScanner extends Component {
   static propTypes = {
     delay: PropTypes.number,
+    onScan: PropTypes.func,
     productMetadata: PropTypes.object,
     parseQRCodeToMetadata: PropTypes.func,
     isQrCodeProcessing: PropTypes.bool
@@ -18,6 +19,17 @@ class QRScanner extends Component {
   constructor(props) {
     super(props);
     console.log(this.props.productMetadata);
+  }
+
+  componentWillMount() {
+    this.props.clearMetadata();
+  }
+
+  componentDidUpdate() {
+    const { qrCode } = this.props.productMetadata;
+    if (qrCode && this.props.onScan) {
+      this.props.onScan(this.props.productMetadata);
+    }
   }
 
   handleScan = (qrCode) => {
@@ -39,31 +51,18 @@ class QRScanner extends Component {
     const { qrCode, productOrigin, productNumber, hash } = this.props.productMetadata;
 
     return (
-        <div>
+        <div className="peach-container peach-qrscanner">
           {
-            isQrCodeProcessing ? (<div>Processing...</div>) :
+            isQrCodeProcessing ? (<div className="peach-container peach-col peach-v-center peach-processing">Processing...</div>) :
             (
-              qrCode ? (<div>Scanned.</div>) :
-              (<QrReader
+              <QrReader
                 delay={delay || 300}
+                resolution={800}
                 onError={this.handleError}
                 onScan={this.handleScan}
-              />)
+              />
             )
           }
-          <div>{
-            !qrCode ? 'No Result.' :
-            (
-              <div>
-                <div>Hash: {hash}</div>
-                <div>Product Details</div>
-                <ul>
-                  <li>Origin: {ORCHARDS[productOrigin] || 'None'}</li>
-                  <li>Number: {productNumber || 'None'}</li>
-                </ul>
-              </div>
-            )
-          }</div>
         </div>
     );
   }
@@ -71,6 +70,7 @@ class QRScanner extends Component {
 
 const mapDispatchToProps = dispatch => bindActionCreators( {
   updateMetadata: productMetadataActions.updateMetadata,
+  clearMetadata: productMetadataActions.clearMetadata
 }, dispatch );
 
 function mapStateToProps(state) {

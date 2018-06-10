@@ -3,7 +3,8 @@ import { productMetadataConstants } from '../constants';
 import { appActions } from './app.actions';
 
 export const productMetadataActions = {
-  updateMetadata
+  updateMetadata,
+  clearMetadata
 };
 
 function updateMetadata (qrCode) {
@@ -27,4 +28,13 @@ function updateMetadata (qrCode) {
       return {type: productMetadataConstants.UPDATE_METADATA, payload: metadata};
     }
   }
+}
+
+function clearMetadata () {
+  return {type: productMetadataConstants.CLEAR_METADATA, payload: {
+    qrCode: null,
+    hash: null,
+    productOrigin: null,
+    productNumber: null
+  }};
 }

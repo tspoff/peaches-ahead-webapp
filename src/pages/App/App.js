@@ -5,6 +5,7 @@ import { authActions } from '../../redux/actions';
 import './App.css';
 
 import Loading from '../../components/Loading/Loading';
+import LoggedIn from '../LoggedIn/LoggedIn';
 import { QRScanner } from '../../components/QRScanner/QRScanner';
 
 class App extends Component {
@@ -13,24 +14,14 @@ class App extends Component {
   }
 
   render() {
-    function onAppLoad(props) {
-      if (!props.app.isAppLoaded) {
-        return <Loading />
-      } else {
-        return (
-          <div>
-            <QRScanner />
-          </div>
-        )
-      }
-    }
+    const { isAppLoaded } = this.props.app;
 
     return (
       <MuiThemeProvider>
-        <div>
-          <div className="peach-container peach-col peach-app-container peach-stretch peach-full-height">
-            {onAppLoad(this.props)}
-          </div>
+        <div className="peach-container peach-col peach-app-container peach-full-height">
+          {
+            !isAppLoaded ? <Loading /> : <LoggedIn />
+          }
         </div>
       </MuiThemeProvider>
     );

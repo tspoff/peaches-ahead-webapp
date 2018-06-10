@@ -11,7 +11,8 @@ const productMetadata = UtilsService.createReducer({
   productOrigin: null,
   productNumber: null
 }, {
-  [productMetadataConstants.UPDATE_METADATA]: updateMetadata
+  [productMetadataConstants.UPDATE_METADATA]: updateMetadata,
+  [productMetadataConstants.CLEAR_METADATA]: updateMetadata
 });
 
 export default productMetadata;

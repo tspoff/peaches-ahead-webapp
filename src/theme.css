@@ -18,7 +18,7 @@
   font-family: europa, sans-serif;
   text-align: center;
   letter-spacing: 1px;
-  font-size: 14px;
+  font-size: 10px;
   color: #333; }
 
 body {
@@ -34,24 +34,6 @@ html, body, #root {
 .peach-full-width {
   width: 100%; }
 
-.btn.peach-btn {
-  background-color: transparent;
-  color: #7C71E2;
-  border-radius: 100px;
-  height: 48px;
-  border: 2px solid #9B9B9B;
-  font-weight: bold;
-  letter-spacing: 1px;
-  line-height: 32px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 16px; }
-
-.btn.peach-btn.peach-btn-purple {
-  background-color: #A099EB;
-  color: #FFFF;
-  border: none;
-  line-height: 36px; }
-
 .peach-container {
   display: flex; }
 
@@ -66,9 +48,3 @@ html, body, #root {
 
 .peach-container.peach-stretch {
   align-items: stretch; }
-
-.peach-text-md {
-  font-size: 16px; }
-
-.peach-text-xs {
-  font-size: 10px; }

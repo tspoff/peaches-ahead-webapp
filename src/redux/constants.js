@@ -23,5 +23,6 @@ export const userConstants = {
 };
 
 export const productMetadataConstants = {
-    UPDATE_METADATA: 'UPDATE_METADATA'
+    UPDATE_METADATA: 'UPDATE_METADATA',
+    CLEAR_METADATA: 'CLEAR_METADATA'
 };
