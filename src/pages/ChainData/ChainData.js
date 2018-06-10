@@ -7,6 +7,8 @@ import PropTypes from 'prop-types';
 import { productBlockchainActions } from '../../redux/actions';
 import { ORCHARDS } from '../../constants';
 
+import config from '../../../server/config';
+
 import {Card} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -71,7 +73,8 @@ class ChainData extends Component {
                 </div>
                 <div className="peach-bc-meta-hash">
                   <span className="peach-bc-hash-title">Hash</span>
-                  <span className="peach-bc-hash">{hash || multiChainHash || '7832ab6b126a8581b831f728b9f7cc427'}</span>
+                    {/* <span className="peach-bc-hash"><a href={`https://explorer-sandbox-testnet.factom.com/chains/${config.factom.chainHash}/entries/5c5def1ee233808e6f3123556ae21abfba2f8693aaaaaf423b9d6894713079b6`}>{hash || multiChainHash || '5c5def1ee233808e6f3123556ae21abfba2f8693aaaaaf423b9d6894713079b6'}</a></span> */}
+                    <span className="peach-bc-hash"><a href={`https://explorer-sandbox-testnet.factom.com/chains/${config.factom.chainHash}/entries/5c5def1ee233808e6f3123556ae21abfba2f8693aaaaaf423b9d6894713079b6`}>{'5c5def1ee233808e6f3123556ae21abfba2f8693aaaaaf423b9d6894713079b6'}</a></span>
                 </div>
               </div>
               <div className="peach-info-done">
