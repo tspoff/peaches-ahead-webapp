@@ -1,3 +1,4 @@
+import { last, split } from 'lodash-es'
 import { productMetadataConstants } from '../constants';
 import { appActions } from './app.actions';
 
@@ -15,7 +16,8 @@ function updateMetadata (qrCode) {
     }, 2000);
 
     function update (qrCode) {
-      return {type: productMetadataConstants.UPDATE_METADATA, payload: { qrCode }};
+      const metadata = { qrCode, hash: last(split(qrCode, ' ')) };
+      return {type: productMetadataConstants.UPDATE_METADATA, payload: metadata};
     }
   }
 }

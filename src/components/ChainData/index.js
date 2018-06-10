@@ -9,6 +9,15 @@ class App extends Component {
   static propTypes = {}
   static defaultProps = {}
   state = {}
+  
+  componentDidMount() {
+    const { multiChainHash } = this.props.params;
+    this.getChainData(multiChainHash);
+  }
+
+  async getChainData(multiChainHash) {
+
+  }
 
   render() {
     const { className, ...props } = this.props;
