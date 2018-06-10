@@ -5,16 +5,15 @@ const path = require('path');
 const { FactomCli } = require('factom');
 const got = require('got');
 const axios = require('axios');
-
-const PEACH_CHAIN_HASH = '04fc7129d25d2d3068eea5c8a51413d2b42ebbb789229653401091a3915918f2';
+const config = require('./config');
 
 const app = express();
 
 const multichain = require("multichain-node")({
-  port: 7189,
-  host: '172.17.0.2',
-  user: "multichainrpc",
-  pass: "7udEzUQ4E5mhKPngqZkJpPwFHMsPckiZRbuwd9axEaz9"
+  port: config.multichain.port,
+  host: config.multichain.host,
+  user: config.multichain.user,
+  pass: config.multichain.pass,
 });
 
 // Setup logger
@@ -29,8 +28,8 @@ app.get('/api/factom/entry/:entry', async (req, res) => {
   try {
     const options = {
       method: 'GET',
-      headers: { 'Content-Type': 'application/json', 'factom-provider-token': 'rezRmi8w1NCmAur6KSRx58wWvcok8PuAxiTxS0h6L46eDKtb' },
-      url: `https://apiplus-api-sandbox-testnet.factom.com/v1/chains/${PEACH_CHAIN_HASH}/entries/${entry}`,
+      headers: { 'Content-Type': 'application/json', 'factom-provider-token': `${config.factom.apiKey}` },
+      url: `https://apiplus-api-sandbox-testnet.factom.com/v1/chains/${config.factom.chainHash}/entries/${entry}`,
     };
     const response = await axios(options);
     console.log(response);
